@@ -1,0 +1,217 @@
+html,body
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+
+:root
+  --bold-color: rgba(0, 0, 0, 0.8);
+  --nav-background-color: #fefefe;
+  --nav-color: #666;
+  --workspace-margin-top: 46px;
+  --transition-style: all 0.1s ease-in-out;
+  --editor-bg: #f5f5f5
+
+*
+  box-sizing: border-box;
+
+body
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Noto Sans', 'Ubuntu', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif, 'Noto Sans CJK SC', 'Source Han Sans SC',
+  'Microsoft Yahei';
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bold-color);
+
+#root
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+.workspace
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  &.editor
+    background-color: #f5f5f5
+  &.editor .content, &.preview .content
+    width 100%
+    max-width 992px
+  &.expand
+    .navbar
+      left  240px
+      transition: all 200ms ease-in-out;
+      width calc(100% - 240px)
+    .article-list
+      margin-left 0
+    .ws-content
+      transition: all 200ms ease-in-out;
+      width calc(100% - 240px)
+  
+
+.navbar
+  position fixed;
+  top 0
+  left 0
+  width: 100%;
+  height 30px
+  background-color: transparent;
+  color: var(--nav-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size 12px
+  z-index 2
+  .navbar-wrapper
+    width 50%
+    display flex
+    flex-direction row
+    align-items center
+    height 100%
+    padding 4px 15px
+    z-index 2
+    &:first-child
+      // background-color var(--editor-bg)
+      justify-content flex-start
+    &.opts
+      justify-content flex-end
+  .navbar-wrapper-icon
+    cursor pointer
+    margin-left: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    position: relative;
+    -webkit-transition: var(--transition-style);
+    -moz-transition: var(--transition-style);
+    transition: var(--transition-style);
+    font-size 13px
+  .navbar-wrapper-icon:hover,
+  .navbar-wrapper-icon.choosen
+    cursor: pointer;
+    background-color: #eee;
+
+  // .navbar-wraper-select-theme
+  //   background-color: var(--nav-background-color);
+  //   color: var(--nav-color);
+  //   cursor: pointer;
+  //   outline: none;
+  //   padding: 2px 4px;
+  //   border: 1px solid var(--nav-color);
+  //   border-radius: 4px;
+  //   -webkit-border-radius: 4px;
+  //   -moz-border-radius: 4px;
+  //   -webkit-transition: var(--transition-style);
+  //   -moz-transition: var(--transition-style);
+  //   transition: var(--transition-style);
+
+  // .navbar-wraper-select-theme:hover
+  // background-color: rgba(255, 255, 255, 0.2);
+
+.content
+  width: 50%
+  padding-top 30px
+  &.editor 
+    background-color #f5f5f5
+
+.editor, .previewer
+  &.hide
+    display: none
+    display: none;
+
+/*
+aside s
+*/
+.article-list
+  width: 240px;
+  height: 100%;
+  margin-left -240px;
+  overflow-y: auto;
+  height: 100%;
+  background: #fafafa;
+  transition: all 200ms ease-in-out;
+  cursor: default;
+  z-index: 1;
+  position relative
+  display: flex;
+  flex-direction: column;
+  &:after
+    content ''
+    position absolute
+    width 0 
+    border-right 1px solid #ccc;
+    height 200%
+    top 0
+    right 0
+    transform scale(0.5)
+    transform-origin top right
+    
+
+.article-list-hd
+  position relative
+  height 40px
+  .form-table
+    width 100%
+    height 100%
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    padding 4px 10px
+    .form-opt
+      flex 1
+      input
+        border 1px solid #dedede
+        padding 4px;
+        outline none
+        height 100%
+        width 100%
+        font-size 13px
+    .opt-add
+      width 40px
+      height 40px
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+.article-list-bd
+  flex 1
+  overflow-y auto
+  ul,li
+    list-style none
+    padding 0
+    margin 0
+  ul
+    padding 10px 0
+    background-color: #FFF
+  .list-item
+    border-bottom 1px solid #efefef;
+    padding 8px 10px
+    h4,p
+      margin 0
+    h4
+      font-size 13px
+      margin-bottom 8px
+    p
+      font-size 12px
+      color #666
+      line-height 22px
+  
+
+/*
+content s
+*/
+.ws-content
+  display flex
+  flex-direction column
+  flex 1
+  height 100%
+.ws-content-bd
+  flex 1
+  display flex
+  flex-direction row
+  height calc(100% - 30px)
+  justify-content center

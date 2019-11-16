@@ -1,0 +1,58 @@
+.CodeMirror {
+  font: normal normal normal 14px/1.5 Lato, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.CodeMirror {
+  padding-left: 45px;
+  padding-right: 40px;
+  width: 100%;
+  height: 100%;
+  color: var(--bold-color);
+  font-weight: 400;
+}
+.CodeMirror::-webkit-scrollbar {
+  display: none
+}
+
+/* Custom Scrollbar */
+.CodeMirror-vscrollbar,
+.CodeMirror-hscrollbar {
+  outline: none;
+  border: none;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar,
+.previewer-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar,
+.previewer-content pre::-webkit-scrollbar {
+  height: 9px;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-track,
+.CodeMirror-hscrollbar::-webkit-scrollbar-track,
+.previewer-content::-webkit-scrollbar-track,
+.previewer-content pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+  display: none
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb,
+.CodeMirror-hscrollbar::-webkit-scrollbar-thumb,
+.previewer-content::-webkit-scrollbar-thumb,
+.previewer-content pre::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+/* End of Custom Scrollbar */
+.CodeMirror,
+.previewer-content {
+  height: 100%;
+}
