@@ -1,4 +1,4 @@
-## MarkdownEditor
+## MarkdownEditor [![Build Status](https://travis-ci.org/pplgin/md-online.svg?branch=master)](https://travis-ci.org/pplgin/md-online)
 
 MarkdownEditor
 
