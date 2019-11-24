@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Storage from './libs/storage';
+import { ItemOptionsHandle } from './libs/item-utils';
 import NavBar from './components/NavBar';
 import Editor from './components/Editor';
 import Previewer from './components/Previewer';
@@ -116,12 +117,15 @@ export default class App extends Component {
 
   onToggleMode = type => this.setState({ workspaceType: type });
 
+  itemClick = e => ItemOptionsHandle(this.editorRef.MirrorEditor, e);
+
   render() {
-    const { showList, workspaceType } = this.state;
+    const { workspaceType } = this.state;
     return (
       <div className={`workspace ${workspaceType}`}>
         <div className={`ws-content`}>
           <NavBar
+            itemClick={this.itemClick}
             themes={this.props.themes}
             mode={workspaceType}
             onToggleMode={this.onToggleMode}
@@ -132,6 +136,7 @@ export default class App extends Component {
           <div className="ws-content-bd">
             {workspaceType !== 'preview' && (
               <Editor
+                ref={t => (this.editorRef = t)}
                 markdownText={this.state.markdownText}
                 isOpenFromDisk={this.state.isOpenFromDisk}
                 onTextChanged={this.onTextChanged}
