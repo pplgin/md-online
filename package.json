@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "codemirror": "5.49.0",
-    "highlight.js": "9.15.10",
+    "highlight.js": "10.4.1",
     "marked": "0.7.0",
     "mermaid": "^8.2.6",
     "react": "16.10.2",
